@@ -8,6 +8,7 @@ using System.Text.Json;
 class AccountsLogic
 {
     private List<AccountModel> _accounts;
+    private AccountsAccess access = new AccountsAccess();
 
     //Static properties are shared across all instances of the class
     //This can be used to get the current logged in account from anywhere in the program
@@ -16,7 +17,7 @@ class AccountsLogic
 
     public AccountsLogic()
     {
-        _accounts = AccountsAccess.LoadAll();
+        _accounts = access.LoadAll()?.ToList() ?? new List<AccountModel>();
     }
 
 
