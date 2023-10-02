@@ -16,6 +16,8 @@ static class UserLogin
             Console.WriteLine("Welcome back " + acc.FullName);
             Console.WriteLine("Your email number is " + acc.EmailAddress);
 
+            var contactPresentation = new AccessContacts();
+            contactPresentation.ShowOptions();
             //Write some code to go back to the menu
             //Menu.Start();
         }

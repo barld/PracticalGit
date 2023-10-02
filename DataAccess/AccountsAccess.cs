@@ -1,14 +1,14 @@
 using System.Text.Json;
 
-static class AccountsAccess
+public class AccountsAccess: JsonAccessLayer
 {
-    static string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"DataSources/accounts.json"));
+    static string path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"DataSources/accounts.json"));
 
 
-    public static List<AccountModel> LoadAll()
+    public IEnumerable<AccountModel>? LoadAll()
     {
         string json = File.ReadAllText(path);
-        return JsonSerializer.Deserialize<List<AccountModel>>(json);
+        return JsonSerializer.Deserialize<IEnumerable<AccountModel>>(json, jsonOptions);
     }
 
 
