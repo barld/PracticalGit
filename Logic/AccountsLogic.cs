@@ -36,7 +36,8 @@ class AccountsLogic
             //add new model
             _accounts.Add(acc);
         }
-        AccountsAccess.WriteAll(_accounts);
+        var accessLayer = new AccountsAccess();
+        accessLayer.WriteAll(_accounts);
 
     }
 

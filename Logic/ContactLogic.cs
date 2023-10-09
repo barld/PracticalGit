@@ -9,6 +9,6 @@ public class ContactLogic {
 
         var accessLayer = new ContactAccess();
 
-        accessLayer.AddContact(model);
+        accessLayer.Add(model);
     }
 }
